@@ -10,7 +10,7 @@ from setuptools import setup, Extension, find_packages
 from distutils.ccompiler import new_compiler
 from distutils.command.build_ext import build_ext
 from distutils.errors import CCompilerError, DistutilsExecError, DistutilsPlatformError
-
+from setuptools import setup
 
 STATIC_BUILD_DIR = "build/static"
 STATIC_LIB_NAME = "quickavro"
