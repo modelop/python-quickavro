@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel", "requests"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quickavro"
+version = "0.1.0"  # Update to your actual version
+description = "A high-performance interface in Python for reading/writing Avro files."
+readme = "README.md"
+requires-python = ">=3.3"
+license = {text = "Apache Software License"}
+authors = [
+    {name = "ChrisRx"} # Replace with actual author name
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: C",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities"
+]
+dependencies = [
+    "requests"
+]
+
+[project.entry-points.console_scripts]
+quickavro = "quickavro.__main__:main"
+
+[project.optional-dependencies]
+test = ["pytest>=2.8.7"]

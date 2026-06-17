@@ -293,52 +293,10 @@ if __name__ == '__main__':
         sys.stderr.write("Compiling vendor static library ...\n")
         compile_vendor_static(STATIC_BUILD_DIR, STATIC_LIB_NAME)
     setup(
-        name="quickavro",
-        version=get_version(),
-        description="Very fast Avro library for Python.",
-        long_description=open("docs/README.rst").read(),
-        author="Chris Marshall",
-        license="Apache 2.0",
-        url="https://github.com/ChrisRx/quickavro",
-        packages=find_packages(exclude=['tests*']),
-        cmdclass={'build_ext': BuildExt},
+        cmdclass = {'build_ext': BuildExt},
+        zip_safe = False,
+        package_dir = {'quickavro': 'quickavro'},
         ext_modules=[
             compile_ext(STATIC_LIB)
-        ],
-        entry_points={
-            'console_scripts': [
-                'quickavro = quickavro.__main__:main'
-            ]
-        },
-        zip_safe=False,
-        package_dir={'quickavro': 'quickavro'},
-        install_requires=[
-        ],
-        extras_require={
-        },
-        setup_requires=[
-            "pytest-runner",
-        ],
-        tests_require=[
-            "pytest>=2.8.7",
-        ],
-        classifiers=[
-            'Development Status :: 5 - Production/Stable',
-            'Intended Audience :: Developers',
-            'License :: OSI Approved :: Apache Software License',
-            'Natural Language :: English',
-            'Operating System :: POSIX :: Linux',
-            'Programming Language :: C',
-            'Programming Language :: Python',
-            'Programming Language :: Python :: 2',
-            'Programming Language :: Python :: 2.7',
-            'Programming Language :: Python :: 3',
-            'Programming Language :: Python :: 3.3',
-            'Programming Language :: Python :: 3.4',
-            'Programming Language :: Python :: 3.5',
-            'Topic :: Software Development',
-            'Topic :: Software Development :: Libraries',
-            'Topic :: Software Development :: Libraries :: Python Modules',
-            'Topic :: Utilities'
         ]
     )
